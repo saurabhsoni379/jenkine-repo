@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "tf_bucket" {
-  bucket = "jenkins-s3-web-hosting"
+  bucket = "jenkins-s3-web"
 }
 
 resource "aws_s3_bucket_public_access_block" "s3-access-control" {
