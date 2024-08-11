@@ -17,7 +17,7 @@ resource "aws_instance" "ec2-server-1" {
 }
 
 
-resource "aws_instance" "ec2-server-2" {
+resource "aws_instance" "ec2-server-3" {
   ami = "ami-04a81a99f5ec58529"
   instance_type = "t2.micro"
   subnet_id = module.vpc.public_subnets[1]
