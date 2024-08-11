@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage AWS Default VPC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage AWS Default VPC</h1>
+
+    <section>
+        <h2>View Default VPC</h2>
+        <p>To identify the default VPC in your AWS account, you can use the AWS Management Console or AWS CLI.</p>
+        <h3>AWS Management Console</h3>
+        <ol>
+            <li>Open the VPC console at <a href="https://console.aws.amazon.com/vpc/" target="_blank">AWS VPC Console</a>.</li>
+            <li>Click on "Your VPCs" in the navigation pane.</li>
+            <li>Look for the column labeled "Default VPC". The default VPC will have "Yes" in this column.</li>
+        </ol>
+        <h3>AWS CLI</h3>
+        <pre><code>aws ec2 describe-vpcs --query "Vpcs[?IsDefault==true].VpcId"</code></pre>
+    </section>
+
+    <section>
+        <h2>Create Default VPC</h2>
+        <p>If you need to create a default VPC, follow these steps:</p>
+        <h3>AWS Management Console</h3>
+        <ol>
+            <li>Open the VPC console at <a href="https://console.aws.amazon.com/vpc/" target="_blank">AWS VPC Console</a>.</li>
+            <li>Click on "Your VPCs" in the navigation pane.</li>
+            <li>Click on the "Actions" button.</li>
+            <li>Select "Create Default VPC" from the dropdown menu.</li>
+            <li>Confirm the action when prompted.</li>
+        </ol>
+        <h3>AWS CLI</h3>
+        <pre><code>aws ec2 create-default-vpc</code></pre>
+    </section>
+
+    <section>
+        <h2>Verify Default VPC</h2>
+        <p>After creating the default VPC, you can verify its creation:</p>
+        <h3>AWS CLI</h3>
+        <pre><code>aws ec2 describe-vpcs --query "Vpcs[?IsDefault==true].VpcId"</code></pre>
+    </section>
+</body>
+</html>
